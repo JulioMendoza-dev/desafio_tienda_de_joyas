@@ -1,0 +1,17 @@
+{
+  "name": "my-precious",
+  "version": "1.0.0",
+  "description": "A simple Express server with PostgreSQL integration",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14",
+    "pg": "^8.18.0",
+    "pg-format": "^1.0.4"
+  }
+}
