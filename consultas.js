@@ -88,8 +88,26 @@ const obtenerJoyasPorFiltros = async ({precio_max,precio_min,categoria,metal,}) 
     throw error;
   }
 };
+
+const joyasHATEOAS = (joyas) => {
+const results = joyas.map((j) => {
+return {
+name: j.nombre,
+href: `/Joyas/${j.id}`,
+}
+}).slice(0, 4)
+const total = joyas.length
+const HATEOAS = {
+total,
+results
+}
+return HATEOAS
+}
+
+
 module.exports = {
   testConnection,
   obtenerJoyas,
   obtenerJoyasPorFiltros,
+  joyasHATEOAS
 };

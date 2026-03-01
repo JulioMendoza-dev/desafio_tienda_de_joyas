@@ -1,3 +1,9 @@
 Middleware personalizado ejecutado: GET /joyas?order_by=id_desc&limit=3&page=1
 Middleware personalizado ejecutado: GET /joyas?order_by=id_desc&limit=3&page=1
 2026-03-01T02:26:47.453Z - GET /joyas?order_by=id_desc&limit=3&page=1 - IP: ::ffff:127.0.0.1 - Status: 200 - Tiempo: 18ms
+2026-03-01T02:47:34.962Z - GET /joyas?order_by=id_desc&limit=3&page=1 - IP: ::ffff:127.0.0.1 - Status: 200 - Tiempo: 10ms
+2026-03-01T02:57:27.289Z - GET /joyas?order_by=id_desc&limit=3&page=1 - IP: ::ffff:127.0.0.1 - Status: 404 - Tiempo: 6ms
+2026-03-01T02:58:05.022Z - GET /joyas?order_by=id_desc&limit=3&page=1 - IP: ::ffff:127.0.0.1 - Status: 500 - Tiempo: 12ms
+2026-03-01T03:02:39.585Z - GET /joyas?order_by=id_desc&limit=3&page=1 - IP: ::ffff:127.0.0.1 - Status: 500 - Tiempo: 14ms
+2026-03-01T03:03:45.781Z - GET /joyas?order_by=id_desc&limit=3&page=1 - IP: ::ffff:127.0.0.1 - Status: 500 - Tiempo: 14ms
+2026-03-01T03:05:37.804Z - GET /joyas?order_by=id_desc&limit=3&page=1 - IP: ::ffff:127.0.0.1 - Status: 200 - Tiempo: 44ms

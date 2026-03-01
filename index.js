@@ -6,6 +6,7 @@ const {
   testConnection,
   obtenerJoyas,
   obtenerJoyasPorFiltros,
+  joyasHATEOAS,
 } = require("./consultas");
 const path = require("path");
 
@@ -42,12 +43,15 @@ app.get("/Joyas", async (req, res) => {
     // Llamar a la función obtenerJoyas con los parámetros de consulta
     const joyas = await obtenerJoyas(queryStrings);
     // Enviar la respuesta con las joyas obtenidas
+    const HATEOAS = await joyasHATEOAS(joyas.result)
+    joyas.HATEOAS = HATEOAS
     res.json(joyas);
   } catch (error) {
     console.error("Error al obtener las joyas:", error); //respuesta de error al cliente por consola
     res.status(500).json({ error: error.message }); //respuesta de error al cliente por HTTP
   }
 });
+
 
 app.get("/Joyas/filtros", async (req, res) => {
   try {
@@ -60,3 +64,4 @@ app.get("/Joyas/filtros", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
