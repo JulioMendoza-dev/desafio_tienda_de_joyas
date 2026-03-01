@@ -1,0 +1,3 @@
+Middleware personalizado ejecutado: GET /joyas?order_by=id_desc&limit=3&page=1
+Middleware personalizado ejecutado: GET /joyas?order_by=id_desc&limit=3&page=1
+2026-03-01T02:26:47.453Z - GET /joyas?order_by=id_desc&limit=3&page=1 - IP: ::ffff:127.0.0.1 - Status: 200 - Tiempo: 18ms

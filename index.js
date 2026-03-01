@@ -1,14 +1,28 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const fs = require("fs");
 const {
   testConnection,
   obtenerJoyas,
   obtenerJoyasPorFiltros,
 } = require("./consultas");
+const path = require("path");
 
 app.use(cors());
 app.use(express.json());
+
+const middlewarePersonalizado = (req, res, next) => {
+  const start = Date.now();
+ res.on("finish", () => {
+    const duration = Date.now() - start;
+    const register = `${new Date().toISOString()} - ${req.method} ${req.url} - IP: ${req.ip} - Status: ${res.statusCode} - Tiempo: ${duration}ms`;
+    fs.appendFileSync("log.txt", register + "\n");
+  });
+
+  next();
+}
+app.use(middlewarePersonalizado);
 
 app.listen(3000, async () => {
   try {
