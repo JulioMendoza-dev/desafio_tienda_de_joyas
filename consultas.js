@@ -1,13 +1,15 @@
 const { Pool } = require("pg");
 const format = require("pg-format");
+require("dotenv").config();
 
 const pool = new Pool({
-  user: "julio",
-  host: "localhost",
-  database: "joyas",
-  password: "julio123",
+  user: process.env.PG_USER,
+  host: process.env.PG_HOST,
+  database: process.env.PG_DB,
+  password: process.env.PG_PASSWORD,
   port: 5432,
 });
+
 
 const testConnection = async () => {
   try {
